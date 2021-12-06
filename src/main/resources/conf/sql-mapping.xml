@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping-locations>
+	<directory-location path="/src/main/resources/META-INF/sql-conf/"/>
+</mapping-locations>
