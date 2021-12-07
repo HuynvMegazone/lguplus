@@ -28,10 +28,9 @@ public class UserInfoPostgresRepositoryImpl implements UserInfoRepository {
         try {
             long startTime = System.currentTimeMillis();
 
-            String queryString = "select username,password from tbl_user where username = ?1";
+            String queryString = "select username, password, description from tbl_user where username = 'admin' ";
             log.info(">>> SQL: {}", queryString);
             UserInfo userInfo =  (UserInfo) entityManager.createNativeQuery(queryString, "UserInfoResult").getSingleResult();
-
             log.info(">>> Executed Time: {}", (System.currentTimeMillis() - startTime));
             return userInfo;
         } catch (Exception ex) {

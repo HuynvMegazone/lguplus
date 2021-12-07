@@ -28,6 +28,9 @@ dependencies {
 	implementation 'com.github.xiaoymin:knife4j-springdoc-ui:3.0.3'
 
 //	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+
 
 	implementation 'org.apache.kafka:kafka-streams'
 	implementation group: 'com.google.guava', name: 'guava', version: '28.1-jre'
