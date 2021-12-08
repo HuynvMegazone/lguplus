@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EntityScan(basePackageClasses = {User.class}) // todo : 고민
+@EntityScan(basePackageClasses = {User.class})
 @EnableJpaRepositories(basePackages = {"com.lguplus.fleta.adapters.repositoryimpl"})
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class PostgresDataSourceConfiguration {
@@ -26,9 +26,9 @@ public class PostgresDataSourceConfiguration {
 		return DataSourceBuilder.create().build();
 	}
 
-	@Bean
-	@ConfigurationProperties(prefix="spring.second-datasource")
-	public DataSource secondaryDataSource() {
-		return DataSourceBuilder.create().build();
-	}
+//	@Bean
+//	@ConfigurationProperties(prefix="spring.second-datasource")
+//	public DataSource secondaryDataSource() {
+//		return DataSourceBuilder.create().build();
+//	}
 }

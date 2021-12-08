@@ -17,6 +17,12 @@ import java.io.Serializable;
 @Table(name = "tbl_user", schema = "public")
 public class User implements Serializable {
     @Id
-    @Column(name = "user_name")
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "description")
+    private String description;
 }

@@ -5,16 +5,16 @@
     http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
 
     <!-- UserInfoRepository -->
-<!--    <named-native-query name="UserInfoPostgresRepository.findUser" result-set-mapping="com.lguplus.fleta.config.dto.UserInfo">-->
-<!--        <query>-->
-<!--            <![CDATA[-->
-<!--			SELECT username, password, description-->
-<!--			FROM public.tbl_user-->
-<!--			WHERE username = :username-->
-<!--			LIMIT 1-->
-<!--			]]>-->
-<!--        </query>-->
-<!--    </named-native-query>-->
+    <named-native-query name="UserInfoPostgresRepository.findUsername" result-set-mapping="UserInfoResult">
+        <query>
+            <![CDATA[
+			SELECT username, password, description
+			FROM public.tbl_user
+			WHERE username = :username
+			LIMIT 1
+			]]>
+        </query>
+    </named-native-query>
 
     <!-- SQL Result Mapping -->
     <sql-result-set-mapping name="UserInfoResult">
