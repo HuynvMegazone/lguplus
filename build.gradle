@@ -21,14 +21,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation "io.springfox:springfox-boot-starter:3.0.0"
 	implementation 'com.github.xiaoymin:knife4j-spring-ui:3.0.3'
 	implementation 'com.github.xiaoymin:knife4j-springdoc-ui:3.0.3'
-
-//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	implementation group: 'com.oracle.ojdbc', name: 'ojdbc8', version: '19.3.0.0'
+	implementation group: 'com.oracle.ojdbc', name: 'orai18n', version: '19.3.0.0'
 	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
 
 

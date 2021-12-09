@@ -26,9 +26,4 @@ public class PostgresDataSourceConfiguration {
 		return DataSourceBuilder.create().build();
 	}
 
-//	@Bean
-//	@ConfigurationProperties(prefix="spring.second-datasource")
-//	public DataSource secondaryDataSource() {
-//		return DataSourceBuilder.create().build();
-//	}
 }

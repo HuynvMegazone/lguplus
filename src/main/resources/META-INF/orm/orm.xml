@@ -16,12 +16,48 @@
         </query>
     </named-native-query>
 
+    <!-- GalleryRepository  WHERE -->
+    <named-native-query name="GalleryRepository.getGalleryCateList" result-set-mapping="GalleryResult">
+        <query><!--                WHERE       A.GALLERY_ID in (:galleryid)-->
+            <![CDATA[
+                SELECT      A.GALLERY_ID   AS ID,
+                            A.P_GALLERY_ID AS PARENT,
+                            A.GALLERY_NAME AS TEXT,
+                            (SELECT
+                                     CASE
+                                             WHEN COUNT(*) > 0
+                                             THEN 1
+                                             ELSE 0
+                                     END
+                             FROM    SMARTUX.PT_UX_GALLERY
+                            WHERE   P_GALLERY_ID=A.GALLERY_ID AND DELETE_YN='N') AS HASCHILDREN,
+                            A.GALLERY_TYPE AS TYPE,
+                            A.USE_YN AS USEYN
+                FROM        SMARTUX.PT_UX_GALLERY A
+                WHERE       1 = 1
+                AND         DELETE_YN='N' AND USE_YN='Y'
+                ORDER BY A.ORD ASC, MOD_DT DESC
+                FETCH FIRST 5 ROWS ONLY
+			]]>
+        </query>
+    </named-native-query>
+
     <!-- SQL Result Mapping -->
     <sql-result-set-mapping name="UserInfoResult">
         <constructor-result target-class="com.lguplus.fleta.config.dto.UserInfo">
             <column name="username" class="java.lang.String"/>
             <column name="password" class="java.lang.String"/>
             <column name="description" class="java.lang.String"/>
+        </constructor-result>
+    </sql-result-set-mapping>
+
+    <sql-result-set-mapping name="GalleryResult">
+        <constructor-result target-class="com.lguplus.fleta.config.dto.GalleryInfo">
+            <column name="ID" class="java.lang.String"/>
+            <column name="PARENT" class="java.lang.String"/>
+            <column name="TEXT" class="java.lang.String"/>
+            <column name="TYPE" class="java.lang.String"/>
+            <column name="USEYN" class="java.lang.String"/>
         </constructor-result>
     </sql-result-set-mapping>
 
