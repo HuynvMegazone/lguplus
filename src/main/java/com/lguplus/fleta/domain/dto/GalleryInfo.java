@@ -1,4 +1,4 @@
-package com.lguplus.fleta.config.dto;
+package com.lguplus.fleta.domain.dto;
 
 import lombok.*;
 

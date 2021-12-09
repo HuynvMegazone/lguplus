@@ -23,8 +23,8 @@ public class Gallery implements Serializable {
     @Column(name = "P_GALLERY_ID")
     private String pGalleryId;
 
-    @Column(name = "P_GALLERY_NAME")
-    private String pGalleryName;
+    @Column(name = "GALLERY_NAME")
+    private String galleryName;
 
     @Column(name = "GALLERY_TYPE")
     private String galleryType;

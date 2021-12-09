@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @EntityScan(basePackageClasses = {User.class})
 @EnableJpaRepositories(basePackages = {"com.lguplus.fleta.adapters.repositoryimpl"})
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
-public class PostgresDataSourceConfiguration {
+public class DataSourceConfiguration {
 
 	@Bean
 	@ConfigurationProperties(prefix = "spring.datasource")

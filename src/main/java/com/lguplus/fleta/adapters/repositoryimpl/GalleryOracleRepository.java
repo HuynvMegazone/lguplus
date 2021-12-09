@@ -2,7 +2,7 @@ package com.lguplus.fleta.adapters.repositoryimpl;
 
 import com.lguplus.fleta.adapters.repositoryimpl.Key.CacheKey;
 import com.lguplus.fleta.adapters.repositoryimpl.Key.QueryKey;
-import com.lguplus.fleta.config.dto.GalleryInfo;
+import com.lguplus.fleta.domain.dto.GalleryInfo;
 import com.lguplus.fleta.domain.model.Gallery;
 import com.lguplus.fleta.ports.repository.GalleryRepository;
 import org.springframework.cache.annotation.Cacheable;
@@ -26,5 +26,5 @@ public interface GalleryOracleRepository extends GalleryRepository, CrudReposito
             nativeQuery = true)
     @Cacheable(value = CacheKey.AB_CATEGORY_KEY, key = "#galleryid")
     @Override
-    GalleryInfo getGalleryById(@Param("galleryid") String galleryid);
+    Gallery getGalleryById(@Param("galleryid") String galleryid);
 }

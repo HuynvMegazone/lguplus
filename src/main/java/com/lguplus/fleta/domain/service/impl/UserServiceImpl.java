@@ -1,6 +1,6 @@
 package com.lguplus.fleta.domain.service.impl;
 
-import com.lguplus.fleta.config.dto.UserInfo;
+import com.lguplus.fleta.domain.dto.UserInfo;
 import com.lguplus.fleta.ports.repository.UserInfoRepository;
 import com.lguplus.fleta.ports.service.UserService;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -42,26 +42,20 @@
         </query>
     </named-native-query>
 
-    <named-native-query name="GalleryRepository.getGalleryById" result-set-mapping="GalleryResult">
+    <named-native-query name="GalleryRepository.getGalleryById" result-class="com.lguplus.fleta.domain.model.Gallery">
         <query>
             <![CDATA[
-                SELECT      A.GALLERY_ID   AS ID,
-                            A.P_GALLERY_ID AS PARENT,
-                            A.GALLERY_NAME AS TEXT,
-                            A.GALLERY_TYPE AS TYPE,
-                            A.USE_YN AS USEYN
+                SELECT      *
                 FROM        SMARTUX.PT_UX_GALLERY A
                 WHERE       A.GALLERY_ID in (:galleryid)
                 AND         DELETE_YN='N' AND USE_YN='Y'
-                ORDER BY A.ORD ASC, MOD_DT DESC
-                FETCH FIRST 5 ROWS ONLY
 			]]>
         </query>
     </named-native-query>
 
     <!-- SQL Result Mapping -->
     <sql-result-set-mapping name="UserInfoResult">
-        <constructor-result target-class="com.lguplus.fleta.config.dto.UserInfo">
+        <constructor-result target-class="com.lguplus.fleta.domain.dto.UserInfo">
             <column name="username" class="java.lang.String"/>
             <column name="password" class="java.lang.String"/>
             <column name="description" class="java.lang.String"/>
@@ -69,7 +63,7 @@
     </sql-result-set-mapping>
 
     <sql-result-set-mapping name="GalleryResult">
-        <constructor-result target-class="com.lguplus.fleta.config.dto.GalleryInfo">
+        <constructor-result target-class="com.lguplus.fleta.domain.dto.GalleryInfo">
             <column name="ID" class="java.lang.String"/>
             <column name="PARENT" class="java.lang.String"/>
             <column name="TEXT" class="java.lang.String"/>

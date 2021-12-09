@@ -30,6 +30,12 @@ dependencies {
 	implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
 	implementation group: 'com.google.guava', name: 'guava', version: '28.1-jre'
 	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.1.Final'
+	//install JWT authentication
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	implementation group: 'com.auth0', name: 'auth0', version: '1.35.0'
+	implementation group: 'com.auth0', name: 'auth0-spring-security-api', version: '1.4.1'
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'

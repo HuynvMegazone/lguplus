@@ -1,6 +1,7 @@
 package com.lguplus.fleta.ports.rest;
 
-import com.lguplus.fleta.config.dto.GalleryInfo;
+import com.lguplus.fleta.domain.dto.GalleryInfo;
+import com.lguplus.fleta.domain.model.Gallery;
 import com.lguplus.fleta.ports.service.GalleryService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class GalleryController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/gallery/findbyId")
     public ResponseEntity<Object> getGalleryById(@Param("galleryid") String galleryid) {
-        GalleryInfo g = galleryService.getGalleryById(galleryid);
+        Gallery g = galleryService.getGalleryById(galleryid);
         if (g != null) {
             return new ResponseEntity<>(g, HttpStatus.OK);
         } else {

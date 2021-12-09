@@ -1,6 +1,6 @@
 package com.lguplus.fleta.ports.rest;
 
-import com.lguplus.fleta.config.dto.UserInfo;
+import com.lguplus.fleta.domain.dto.UserInfo;
 import com.lguplus.fleta.ports.service.UserService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
