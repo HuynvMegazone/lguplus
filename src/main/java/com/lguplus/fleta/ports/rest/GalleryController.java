@@ -23,9 +23,19 @@ public class GalleryController {
     @RequestMapping(method = RequestMethod.GET, value = "/gallery/catelist")
     public ResponseEntity<List> getGalleryCateList(@Param("galleryid") String galleryid) {
         List<GalleryInfo> ls = galleryService.getGalleryCateList(galleryid);
-        System.out.println("Find gallery = " + ls.size());
+
         if (ls != null) {
             return new ResponseEntity<>(ls, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/gallery/findbyId")
+    public ResponseEntity<Object> getGalleryById(@Param("galleryid") String galleryid) {
+        GalleryInfo g = galleryService.getGalleryById(galleryid);
+        if (g != null) {
+            return new ResponseEntity<>(g, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

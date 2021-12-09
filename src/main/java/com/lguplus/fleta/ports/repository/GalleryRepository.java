@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface GalleryRepository {
     List<GalleryInfo> getGalleryCateList(String galleryid);
+
+    GalleryInfo getGalleryById(String galleryid);
 }

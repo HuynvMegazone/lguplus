@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface GalleryService {
     List<GalleryInfo> getGalleryCateList(String galleryid);
+
+    GalleryInfo getGalleryById(String galleryid);
 }

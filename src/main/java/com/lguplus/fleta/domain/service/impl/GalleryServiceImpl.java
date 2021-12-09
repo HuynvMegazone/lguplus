@@ -22,4 +22,10 @@ public class GalleryServiceImpl implements GalleryService {
         List<GalleryInfo> ls = galleryRepository.getGalleryCateList(galleryid);
         return ls;
     }
+
+    @Override
+    public GalleryInfo getGalleryById(String galleryid) {
+        GalleryInfo g = galleryRepository.getGalleryById(galleryid);
+        return g;
+    }
 }

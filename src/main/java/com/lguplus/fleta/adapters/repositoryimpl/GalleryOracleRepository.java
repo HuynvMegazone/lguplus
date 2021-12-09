@@ -21,4 +21,10 @@ public interface GalleryOracleRepository extends GalleryRepository, CrudReposito
     @Cacheable(value = CacheKey.AB_CATEGORY_KEY, key = "#galleryid")
     @Override
     List<GalleryInfo> getGalleryCateList(@Param("galleryid") String galleryid);
+
+    @Query(name = QueryKey.GET_GALLERY_ALBUM_KEY,
+            nativeQuery = true)
+    @Cacheable(value = CacheKey.AB_CATEGORY_KEY, key = "#galleryid")
+    @Override
+    GalleryInfo getGalleryById(@Param("galleryid") String galleryid);
 }

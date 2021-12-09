@@ -26,12 +26,11 @@ public class SwaggerConfiguration {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.useDefaultResponseMessages(true)
 				.select()
-				//.apis(RequestHandlerSelectors.any())
 				.apis(RequestHandlerSelectors.any())
 				.paths(PathSelectors.any())
-				.build();
-//				.apiInfo(apiInfo())
-//				.tags(new Tag(NX_SERIES_LIST, "Api tag description"));
+				.build()
+				.apiInfo(apiInfo())
+				.tags(new Tag(NX_SERIES_LIST, "Api tag description"));
 	}
 
 	private ApiInfo apiInfo() {
